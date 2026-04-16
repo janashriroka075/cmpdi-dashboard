@@ -1,0 +1,270 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+<title>CMPDI Premium Dashboard</title>
+
+<style>
+
+/* ===== BODY (WHOLE PAGE DESIGN) ===== */
+body {
+    font-family: "Times New Roman", Times, serif; /* Font style */
+    margin: 0; /* Remove default spacing */
+    background: linear-gradient(to right, #eef2f7, #dde6f0); /* Background gradient */
+}
+
+/* ===== HEADER (LOGO + TITLE SECTION) ===== */
+.header {
+    display: flex;                /* Align items in one row */
+    align-items: center;          /* Vertical alignment */
+    justify-content: center;      /* Horizontal center */
+    gap: 20px;                    /* Space between logo & text */
+    padding: 20px;                /* Inner spacing */
+    background: linear-gradient(135deg, #1f2d3d, #2c3e50); /* Dark background */
+    color: white;                 /* Text color */
+}
+
+/* LOGO IMAGE */
+.header img {
+    width: 85px; /* Logo size */
+}
+
+/* TITLE TEXT */
+.header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    text-align: centre;
+}
+
+/* ===== TABS (TOP BUTTONS) ===== */
+.tab-bar {
+    display: flex;
+    justify-content: center;  /* Center all tabs */
+    gap: 15px;                /* Space between tabs */
+    margin-top: 25px;
+    flex-wrap: wrap;          /* Move to next line if needed */
+}
+
+/* EACH TAB BUTTON */
+.tab {
+    padding: 12px 20px;
+    background: #2c3e50;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;          /* Pointer on hover */
+    transition: 0.3s;         /* Smooth hover effect */
+}
+
+/* HOVER EFFECT ON TAB */
+.tab:hover {
+    background: #1abc9c;
+}
+
+/* ACTIVE TAB (SELECTED ONE) */
+.active-tab {
+    background: #1abc9c;
+}
+
+/* ===== CONTENT BOX (HIDDEN SECTIONS) ===== */
+.content-box {
+    width: 75%;
+    margin: 25px auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+
+/* ===== OPTION LINE (LINK CONTAINER) ===== */
+.option-line {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* ===== LINKS INSIDE OPTIONS ===== */
+.option-line a {
+    text-decoration: none;   /* Remove underline */
+    color: #2c3e50;
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ADD "|" BETWEEN LINKS */
+.option-line a:not(:last-child)::after {
+    content: "|";
+    margin-left: 10px;
+    color: #aaa;
+}
+
+/* HOVER COLOR CHANGE */
+.option-line a:hover {
+    color: #1abc9c;
+}
+
+/* UNDERLINE ANIMATION EFFECT */
+.option-line a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background: #1abc9c;
+    transition: 0.3s;
+}
+
+/* SHOW UNDERLINE ON HOVER */
+.option-line a:hover::before {
+    width: 100%;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER SECTION ===== -->
+<div class="header">
+    <!-- LOGO -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-1aGifKZKwzvpNnEuCf-4-QfhSOsDlQ-2g&s">
+
+    <!-- COMPANY NAME -->
+    <h1>
+        CENTRAL MINE PLANNING AND DESIGN INSTITUTE LTD <br>
+        REGIONAL INSTITUTE-IV, NAGPUR
+    </h1>
+</div>
+
+<!-- ===== TABS SECTION ===== -->
+<div class="tab-bar">
+
+    <!-- Opens Bulk Google Form -->
+    <div class="tab" onclick="openForm()">📦 Bulk (IOCL)</div>
+
+    <!-- Shows Cartridge Section -->
+    <div class="tab" onclick="openTab('cartridge', this)">🧨 Cartridge</div>
+
+    <!-- Shows Accessories Section -->
+    <div class="tab" onclick="openTab('accessories', this)">⚙️ Accessories</div>
+
+    <!-- Shows Other Vendors Section -->
+    <div class="tab" onclick="openTab('bulkOther', this)">🏭 Bulk (Other Vendors)</div>
+
+    <!-- Shows Reports Section -->
+    <div class="tab" onclick="openTab('reports', this)">📊 Reports</div>
+</div>
+
+<!-- ===== CARTRIDGE CONTENT ===== -->
+<div id="cartridge" class="content-box">
+    <div class="option-line">
+        
+        <!-- BOOSTER FORM LINK -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSed7IFB8pcLWHD9__5J335P8j6Tj5VIutz-QTB6w36aGI12QQ/viewform?usp=header" target="_blank">
+            ➤ NPLD - Booster
+        </a>
+
+        <!-- COLUMN FORM LINK -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1wP5J3wJSdl190NILmCzcoq1dfAaT0zjRwu0sRkRaJUPgYg/viewform?usp=header" target="_blank">
+            ➤ NPLD - Column
+        </a>
+
+        <!-- OTHER OPTIONS (NO LINKS YET) -->
+        <a href="#">➤ P1 - Degree 1</a>
+        <a href="#">➤ PS - Degree 1</a>
+        <a href="#">➤ PS - Degree 2</a>
+    </div>
+</div>
+
+<!-- ===== ACCESSORIES CONTENT ===== -->
+<div id="accessories" class="content-box">
+    <div class="option-line">
+
+         <!-- DETONATING FUSE FORM LINK -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfasgQjcvbX6iuCZHnaY53Y3OVyZszLt7DFXv4n-SpHSj3bQ/viewform?usp=header" target="_blank">
+            ➤ Detonating Fuse
+        </a>
+
+<!-- Permissible Electronic Detonator FORM LINK -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0VA-lBTdAjKJH27TlhvVAyM4uZydmU7RvZCKwBm7uyyYKjA/viewform?usp=header" target="_blank">
+            ➤ Permissible Electronic Detonator
+        </a>
+
+<!-- Electronic Detonator(Programme) FORM LINK -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScCKd-CVLfs8bLq9qAZtHPelxRTZVIf4PWRj5weTQBaJ7ekJg/viewform?usp=header" target="_blank">
+            ➤ Electronic Detonator(Programme)
+        </a>
+
+<!-- Cord Relay FORM LINK -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzeriFeNMiFwpqoGra-GoVLTNB9zd6FlmnMSR3yzEiXLh0tg/viewform?usp=header" target="_blank">
+            ➤ Cord Relay
+        </a>
+
+<!--  Nonel FORM LINK -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4XNIRJ4ZK2jgdJ024_XJ6ts3tmnnavAP_gFC5K2INGkpVRA/viewform?usp=header" target="_blank">
+            ➤  Nonel
+        </a>
+
+<!-- Cast Booster (PETN/TNT) FORM LINK -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEiGLgfeYFfUXhGeABpvcg2mdk2R5eOajFO_AYssqNPKy8pg/viewform?usp=header" target="_blank">
+            ➤  Cast Booster (PETN/TNT)
+        </a>
+
+<!-- Cast Booster (Emulsion) FORM LINK -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1Uq9H4oezVLA313Vx9f6W2yMOyhM93Z_LX9kgyO3B-dq_2A/viewform?usp=header" target="_blank">
+            ➤  Cast Booster (Emulsion)
+        </a>
+       
+    </div>
+</div>
+
+<!-- EMPTY SECTION -->
+<div id="bulkOther" class="content-box">
+    <div class="option-line"></div>
+</div>
+
+<!-- REPORTS SECTION -->
+<div id="reports" class="content-box">
+    <div class="option-line">
+        <a href="#">📦 IOCL Bulk</a>
+        <a href="#">🏭 Other Bulk</a>
+        <a href="#">🧨 Cartridge & Accessories</a>
+    </div>
+</div>
+
+<script>
+
+/* ===== FUNCTION TO SWITCH TABS ===== */
+function openTab(id, element) {
+
+    let contents = document.querySelectorAll(".content-box"); // All sections
+    let tabs = document.querySelectorAll(".tab"); // All tabs
+
+    contents.forEach(c => c.style.display = "none"); // Hide all sections
+    tabs.forEach(t => t.classList.remove("active-tab")); // Remove highlight
+
+    document.getElementById(id).style.display = "block"; // Show selected section
+    element.classList.add("active-tab"); // Highlight clicked tab
+}
+
+/* ===== FUNCTION TO OPEN BULK FORM ===== */
+function openForm() {
+    window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSdsNRp0CSR0CXepBOldxkyfo2bbPHpzB-mukkKRSfizouwveA/viewform?usp=header",
+        "_blank" /* Open in new tab */
+    );
+}
+
+</script>
+
+</body>
+</html>
